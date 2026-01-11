@@ -1,6 +1,7 @@
 # Self Model Protocol Specification
 
-> **Version:** 1.0.0  
+> **Version:** 1.1.0  
+> **Last Updated:** 2026-01-11  
 > **Status:** Active  
 > **Architecture:** 3-Tier (Core + Profile + Extension)
 
@@ -33,8 +34,9 @@ Any `## Core` section MUST contain the following components:
 ### 2.1 Cognitive Signature (Computational Traits)
 Defines the default mode of information processing.
 * **Processing Traits:** The default cognitive biases (e.g., *Structure-First vs. Narrative-First*, *Abstract-First vs. Detail-First*).
-* **Cognitive Rhythm:** The standard procedure or loop for solving problems (e.g., *Observe -> Abstract -> Solve*).
+* **Cognitive Rhythm:** The **implicit, immutable** internal processing order (e.g., *Observe -> Abstract -> Solve*). It defines the cognitive system's 'operating cycle' regardless of the task.
 * **Output Density:** The required density of the output (e.g., *High-Compression* vs. *Exploratory*).
+
 
 ### 2.2 Semantic Grounding (Semantic Anchors)
 Defines the absolute dictionary for the model to prevent semantic drift caused by LLM training data.
@@ -68,7 +70,7 @@ Defines the model's fears and defensive mechanisms. Critical for creating a robu
 
 ### 3.3 Methodology (Cognitive OS)
 Defines the specific frameworks used to interact with the world.
-* **Cognitive Frameworks:** Named methods or SOPs for analysis (e.g., *The 5-Why Analysis*).
+* **Cognitive Frameworks:** **Explicit, named** thinking tools or SOPs applied consciously to specific problems (e.g., *The 5-Why Analysis*, *SWOT*). It defines "which application to run" on top of the kernel.
 
 ### 3.4 Interaction Protocol (API Behavior)
 Defines the social layer.
@@ -116,7 +118,7 @@ Use the following Markdown structure to create a compliant PSM.
 
 ```markdown
 # [Model Name] Portable Self-Model
-> **Protocol:** SMP v1.0
+> **Protocol:** SMP v1.1
 > **Version:** 1.0
 > **Classification:** [Private/Public]
 
@@ -127,12 +129,16 @@ Use the following Markdown structure to create a compliant PSM.
 - **Output Density:** [e.g., High-Compression, no fluff]
 
 ### 1.2 Semantic Grounding
-- **[Term A]:** [Strict Definition]
-- **[Term B]:** [Strict Definition]
+- **Dictionary:**
+    - **[Term A]:** [Strict Definition]
+- **Axioms:**
+    - [Fundamental Truth 1]
 
 ### 1.3 Operational Invariants
-- **P0:** [Absolute Prohibition 1]
-- **P1:** [Absolute Prohibition 2]
+- **P-Rules:**
+    - **P0:** [Absolute Prohibition 1]
+- **Safety Boundaries:**
+    - [Limit 1]
 
 ## 2. Profile (Optional)
 ### 2.1 Identity & Values
@@ -156,3 +162,4 @@ Use the following Markdown structure to create a compliant PSM.
 ### 3.1 Domain: [Name]
 - **Trigger:** [Keywords]
 - **Capabilities:** [List of skills]
+```
