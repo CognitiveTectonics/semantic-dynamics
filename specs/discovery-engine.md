@@ -1,121 +1,109 @@
 # Discovery Engine (Core)
 
-> **Version:** 1.1.0  
-> **Last Updated:** 2026-01-11  
+> **Version:** 2.0.0  
+> **Last Updated:** 2026-01-17  
 > **Status:** Active  
+> **Role:** Observation & Analysis  
+> **Dependency:** Semantic Dynamics (v1.1.0+)  
 
 ---
 
 ## 1. Purpose
-The Discovery Engine (DE) provides a **standardized lens** to observe and describe a subject's cognitive behavior. By defining a shared vocabulary of **Functional Tags** and **Diagnostic Classes**, DE ensures that different analysts (human or AI) can describe the same thought process in a compatible way, without prescribing *how* that analysis is stored or implemented.
+
+The **Discovery Engine (DE)** provides a **standardized lens** to observe and describe a subject's cognitive behavior based on the principles of **Semantic Dynamics**.
+
+Its purpose is to capture the "Shape of Thought" without imposing a specific content structure. By defining a shared vocabulary of **Functional Tags** and **Diagnostic Classes**, DE ensures that different analysts (human or AI) can describe the same thought process in a consistent, interoperable way.
+
+DE produces a **Topology Analysis (TA)**—a structured description of how a subject navigates tension, abstraction, and decision-making.
 
 ## 2. Standard Vocabulary (Functional Tags)
+
 Analysis MUST use these standardized tags to describe the "cognitive moves" a subject makes.
 **LLM Instruction:** Use the "Signals" below as few-shot training data to identify the primary intent.
 
-### A. The Structural Moves (Shape of Thought)
+### A. The Structural Moves (Shape)
+> Actions that define boundaries, organize structure, or change the level of abstraction.
 
-* **FRAME**
-  * *Definition:* Naming the problem, defining boundaries, clarifying intent, or asking "what are we really solving?".
+* **FRAME** (Absorbs: Structure, Observe)
+  * *Definition:* Naming the problem, defining boundaries, establishing context, decomposing complexity, or clarifying intent.
   * *Signals:*
     1. "Let's define the scope: we are only doing MVP right now." (Scoping)
     2. "The core issue here isn't code quality, it's unclear requirements." (Re-framing)
-    3. "Context: We are a bootstrapped startup with limited runway." (Contextualizing)
+    3. "Context: We are a bootstrapped startup, so cost is the constraint." (Contextualizing)
     4. "I want to focus purely on the user experience for this session." (Intent)
-    5. "Wait, are we solving for speed or for scalability?" (Clarifying Question)
-    6. "Let's park that topic for later; it's out of bounds." (Boundary setting)
+    5. "Let's break this down into three layers: UI, Logic, and Data." (Decomposition)
+    6. "Wait, before we solve it, are we optimizing for speed or scale?" (Clarifying)
+    7. "Based on the documentation I just read..." (Observation-to-Frame)
 
 * **ABSTRACT**
-  * *Definition:* Moving from specific to general; extracting invariants, schemas, patterns, analogies, or underlying principles.
+  * *Definition:* Moving from specific data to general patterns, principles, or metaphors.
   * *Signals:*
-    1. "This feels exactly like the 'Adapter Pattern' in software design." (Analogy)
-    2. "The underlying principle here is 'Trust but Verify'." (Principle extraction)
-    3. "Conceptually, this is just a pipe-and-filter architecture." (Schema)
-    4. "If we generalize this rule, it applies to all user types." (Generalization)
-    5. "It's basically a supply and demand problem." (Model matching)
-    6. "Let's ignore the implementation details and look at the topology." (Abstraction)
+    1. "This feels exactly like the Adapter Pattern in software." (Analogy)
+    2. "So the underlying principle here is 'Trust but Verify'." (Principle Extraction)
+    3. "Let's ignore the details for a moment and look at the flow." (Zooming Out)
+    4. "If we treat this as a marketplace, the dynamics change." (Metaphor)
 
-* **STRUCTURE** (Space & Logic)
-  * *Definition:* Decomposing complexity into **static** parts, layers, taxonomies, or interfaces. Organizing the "What".
+### B. The Flow Moves (Motion)
+> Actions that expand or contract the solution space.
+
+* **GENERATE**
+  * *Definition:* Divergent thinking. Opening up possibilities, brainstorming, or hypothesizing.
   * *Signals:*
-    1. "We have the UI layer, the Logic layer, and the Data layer." (Layering)
-    2. "Let's decouple module A from module B." (Decomposition/Topology)
-    3. "This belongs to the 'Authentication' domain." (Categorization)
+    1. "What if we tried doing it backwards?" (Hypothesizing)
+    2. "Here are 5 different ways we could approach this." (List Generation)
+    3. "Maybe we could use AI, or maybe manual entry, or..." (Exploration)
+    4. "Let's throw some ideas on the wall." (Brainstorming)
 
-* **PLAN** (Time & Sequence)
-  * *Definition:* Organizing the "How" and "When". Sequencing actions, defining steps, or managing process.
+* **DECIDE** (Absorbs: Plan)
+  * *Definition:* Convergent thinking. Collapsing possibilities, making judgments, prioritizing, or sequencing actions.
   * *Signals:*
-    1. "Step 1: Fix the bug. Step 2: Write tests." (Sequencing)
-    2. "Phase 1 is Discovery; Phase 2 is Build." (Phasing)
-    3. "I'll break this down into three phases: Discovery, Build, Ship." (Phasing)
+    1. "Option B is definitely the winner here." (Selection)
+    2. "We are not going to support mobile for V1." (Rejection/Constraint)
+    3. "I'm committing to this architecture." (Commitment)
+    4. "First we validate the data, then we run the migration." (Sequencing)
+    5. "This feature is P0, the rest is P2." (Prioritization)
 
+### C. The State & Control (Dynamics)
+> Indicators of internal pressure and process regulation.
 
-### B. The Flow Moves (Direction of Thought)
-
-* **GENERATE** (Divergence)
-  * *Definition:* Opening up possibilities. Brainstorming, listing options, hypothesizing, or creating alternatives without immediate judgment.
+* **TENSION**
+  * *Definition:* The presence of unresolved conflict, overload, ambiguity, or friction. The driver of semantic motion.
   * *Signals:*
-    1. "We could do A, or B, or maybe even C." (Option listing)
-    2. "What if we tried a completely different approach?" (Hypothesizing)
-    3. "Let's throw some ideas on the wall." (Brainstorming)
+    1. "I'm feeling completely overwhelmed by these options." (Overload)
+    2. "Wait, this contradicts what we said earlier." (Conflict)
+    3. "Something feels off, but I can't name it." (Ambiguity)
+    4. "I'm torn between Speed and Quality here." (Dilemma)
 
-* **DECIDE** (Convergence)
-  * *Definition:* Forcing convergence. Committing to a direction, choosing a path, judging options, or cutting off debate.
+* **META**
+  * *Definition:* Reflecting on the process itself rather than the content.
   * *Signals:*
-    1. "Enough discussion, let's ship it." (Forcing action / Stop M3)
-    2. "The verdict is: No go." (Judgment)
-    3. "Decision: We will use Python for this backend." (Commitment)
-    4. "I am confident this is the right path." (Convergence)
-    5. "Let's kill this feature." (Cut)
-    6.  "I'm going with Option B." (Selection)
-
-* **OBSERVE**
-  * *Definition:* Gathering data, reading carefully, retrieving facts, or revisiting inputs.
-  * *Signals:*
-    1. "Let me check the logs to see what actually happened." (Data Retrieval)
-    2. "The error message says 'NullReferenceException'." (Hard Evidence)
-    3. "Reading through the documentation now..." (Real-time Intake)
-    4. "Let's review what we wrote in the last session." (Context Recall)
-    5. "I notice that latency spikes every morning at 9 AM." (Pattern Recognition)
-    6. "Based on the email the client sent yesterday..." (Fact referencing)
-
-* **TENSION** (The Driver)
-  * *Definition:* Surfacing conflict, overload, confusion, ambiguity, or misalignment. The "unresolved pull" that demands cognitive work.
-  * *Signals:*
-    1. "I'm feeling completely overwhelmed by these tasks." (Overload)
-    2. "This code is a mess; I hate touching it." (Friction)
-    3. "I'm torn between doing it fast vs. doing it right." (Dilemma/Conflict)
-    4. "Something feels off about this plan, but I can't name it." (Ambiguity/Pre-emergence)
-    5. "I have too many ideas and don't know where to start." (Fog/M1 Signal)
-    6. "This requirements document contradicts itself." (Misalignment)
-
-
-### C. The Meta Moves
-
-* **META** (The Controller)
-  * *Definition:* Reflecting on the process itself. Checking rhythm, adjusting approach, managing internal state (SD: Rest), or detecting loops.
-  * *Signals:*
-    1. "Are we bike-shedding on minor details?" (Process Check)
-    2. "I think we are going too fast; let's slow down." (Pacing / M1 Prevention)
-    3. "This brainstorming method isn't working for me." (Method Adjustment)
-    4. "I need to take a break and come back with fresh eyes." (State Management / SD: Rest)
-    5. "Let's zoom out and look at the big picture again." (Level Switching)
-    6. "I feel like I'm repeating myself." (Loop Detection / M3 Diagnosis)
+    1. "We seem to be going in circles." (Loop Detection)
+    2. "Let's step back and look at the big picture again." (Level Switching)
+    3. "I need to take a break and come back with fresh eyes." (State Management)
+    4. "Are we spending too much time on this detail?" (Process Check)
 
 ## 3. Diagnostic Classes (Mismatches)
+
 Analysis SHOULD identify these standard impedance types (derived from Semantic Dynamics) when the cognitive flow is imbalanced.
 
 - **M1: Motion Excess (Overload)**
-  - *Definition:* Generation rate > Compression capacity. Too much divergence, run-on thoughts, lack of structure, high anxiety.
-- **M2: Premature Closure (Lock-in)**
+  - *Definition:* Generation rate > Distillation capacity. Too much divergence, run-on thoughts, lack of structure.
+- **M2: Premature Closure (Rigidity)**
   - *Definition:* Crystallization happens too early or too narrowly. Dismissing nuance, absolute language, refusing to explore alternatives.
 - **M3: Oscillatory Non-Convergence (Looping)**
   - *Definition:* Competing framings alternate without settling. "On the one hand... on the other hand..." without resolution.
 - **M4: Suppressed Flow (Blocked)**
-  - *Definition:* Tension exists but emergence is inhibited. Low energy, extremely short/safe answers, hiding details.
+  - *Definition:* Tension exists but emergence is inhibited. Low energy, short/safe answers, hiding details.
 
-## 4. The Rhythm Descriptor (RD)
-An **RD** is a descriptive summary of a subject’s cognitive pattern using the vocabulary above.
-- It is **Descriptive**, not prescriptive.
-- It does **not** require a specific file format (it can be a paragraph, a list, or a JSON object).
-- **Core Requirement:** An RD MUST explicitly reference the subject's usage of Functional Tags and presence of Mismatches.
+## 4. Output: Topology Analysis (TA)
+
+The output of a DE session is a **Topology Analysis (TA)**.
+
+### 4.1 Definition
+A **TA** is a descriptive map of how a subject navigates the Functional Tags defined above. Unlike a linear transcript, a TA identifies recurring patterns and structural preferences.
+
+### 4.2 Core Components
+A valid TA SHOULD describe:
+1.  **Dominant Nodes:** Which functional tags does the subject prioritize? (e.g., "Subject heavily relies on FRAME before GENERATE").
+2.  **Circuit Topology:** The characteristic path of thought. (e.g., "Linear flow: FRAME -> DECIDE" vs "Complex flow: TENSION -> ABSTRACT -> DECIDE").
+3.  **Tension Response:** How does the subject react to TENSION? (e.g., "Resolves via Abstraction" or "Resolves via Immediate Decision").
