@@ -1,9 +1,26 @@
 # Self Model Protocol Specification
 
-> **Version:** 1.2.0  
-> **Last Updated:** 2026-01-11  
-> **Status:** Active  
+> **Version:** 1.2.0 (Final)  
+> **Status:** ⚠️ DEPRECATED  
+> **Superseded By:** Cognitive Reference Protocol (CRP) v1.0.0
+> **Last Updated:** 2026-01-17  
 > **Architecture:** 3-Tier (Core + Profile + Extension)
+
+---
+
+### ⚠️ DEPRECATION NOTICE (2026-01)
+
+**This protocol is no longer the active standard.**
+It has been formally superseded by the **Cognitive Reference Protocol (CRP)**.
+
+**Migration Guide:**
+1.  **Protocol:** SMP is replaced by **CRP**.
+2.  **Artifact:** Portable Self-Model (**PSM**) is replaced by Portable Cognitive Reference (**PCR**).
+3.  **Structure:** * `Cognitive Rhythm` is upgraded to `Reasoning Circuit`.
+    * `Identity & Values` remains in the Core/Profile structure.
+    * `Extension` structure remains compatible.
+
+*Please refer to `cognitive-reference-protocol.md` for the current specification.*
 
 ---
 
