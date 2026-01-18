@@ -41,11 +41,11 @@ The mechanism of CT is a continuous cycle of pressure and solidification:
 
 While **CT** describes the physics, we need a specific architecture to apply it to Generative AI. This is where the **Portable Cognitive Reference (PCR)** comes in.
 
-By applying CT principles, the PCR acts as a **"Cognitive Synthesizer"** to achieve **Injection Locking**:
+By applying CT principles, the PCR acts as a **"Cognitive Reference"** to achieve **Cognitive Locking**:
 
-1.  **The Reference (PCR):** The crystallized bedrock of axioms and values.
-2.  **The Reasoning Circuit (RC):** The topology that forces the AI to resolve tension against your reference.
-3.  **The Cognitive Frequency (CF):** The final, locked-in output that carries your unique signature.
+1.  **Portable Cognitive Reference (PCR):** The crystallized bedrock of axioms and values.
+2.  **Reasoning Circuit (RC):** The topology that forces the AI to resolve tension against your reference.
+3.  **Cognitive Frequency (CF):** The final, locked-in output that carries your unique signature.
 
 > *"CT explains the physics. PCR implements the lock."*
 
